@@ -3,30 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <link rel="stylesheet" href="./css/styles.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
   <title>Frontend Mentor | Pomodoro app</title>
 </head>
 <body>
-  pomodoro
-  short break
-  long break
+  <!--Start of header section-->
+  <section class="header">
+    <div class="header-container">
+      <img class="header-logo" src="./assets/logo.svg" alt="pomodoro-logo">
+    </div>
+  </section>
+  <!--End of header section-->
+  <!--Start of main content section-->
+  <section class="main">
+    <!--Start of status div-->
+    <div class="status">
+      <div class="status-pill">
+        <div class="pill pomodoro-pill">
+          <p>pomodoro</p>
+        </div>
+        <div class="pill short-break-pill">
+          <p>short break</p>
+        </div>
+        <div class="pill long-break-pill">
+          <p>long break</p>
+        </div>
+      </div>
+    </div>
+    <!--End of status div-->
+    <!--Start of timer div-->
+    <div class="timer">
+      <div class="timer-container">
 
-  start 
-  pause
-  restart
+      </div>
+    </div>
+    <!--End of timer container-->
+    <!--Start of settings div-->
+    <div class="settings">
+      <div class="settings-container">
+        <img src="./assets/icon-settings.svg" alt="settings-logo">
+      </div>
+    </div>
+    start 
+    pause
+    restart
 
-  Settings
+    Settings
 
-  Time (minutes)
-  pomodoro
-  short break
-  long break
+    Time (minutes)
+    pomodoro
+    short break
+    long break
 
-  Font
-  Color
+    Font
+    Color
 
-  Apply
+    Apply
+  </section>
+  
 </body>
 </html>

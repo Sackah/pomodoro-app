@@ -1,0 +1,106 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+:root{
+    --main-blue: #1E213F;
+    --second-blue: #161932;
+    --blue-green: #70f3f8;
+    --white-blue: #D7E0FF;
+    --main-white: #fff;
+    --second-white: #EFF1FA;
+    --main-red: #F87070;
+    --main-purple: #D881F8;
+    --font-set1: 'Kumbh Sans', Poppins, Monserat, 'Open Sans', Roboto, sans-serif;
+    --font-set2: 'Roboto Slab', Lora, Merriweather, 'PT Serif', Arvo, 'Playfair Display', 'Noto serif';
+    --font-set3: "Space Mono", "IBM Plex Mono", "Fira Mono", "Anonymous Pro", monospace;
+}
+
+body{
+    background-color: var(--main-blue);
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+/*Header*/
+.header{
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Main*/
+.main{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #fff
+}
+    /*status*/
+.status{
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.status-pill{
+    width: 380px;
+    height: 62px;
+    border-radius: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+    background-color: var(--second-blue);
+}
+.pill{
+    height: 52px;
+    width: 120px;
+    border-radius: 26px;
+    text-align: center;
+    font-family: var(--font-set1);
+    font-weight: 700;
+    color: var(--white-blue);
+}
+.pomodoro-pill{
+    background-color: var(--main-red);
+    color: var(--second-blue);
+}
+
+/*Timer*/
+.timer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.timer-container{
+    width: 420px;
+    height: 420px;
+    border: 1px solid red;
+}
+
+/*Settings*/
+.settings{
+    height: 10vh;
+    width: 100%;
+    border: 1px solid blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*SCROLLBAR*/
+/* Set scrollbar width and track color */
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: var(--main-blue);
+  }
+  
+  /* Set thumb color */
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--white-blue);
+    border-radius: 10px;
+  }
+  
