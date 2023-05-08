@@ -7,9 +7,10 @@
     --second-blue: #161932;
     --blue-green: #70f3f8;
     --white-blue: #D7E0FF;
+    --custom-grey: #6c6e86;
     --main-white: #fff;
     --second-white: #EFF1FA;
-    --main-red: #F87070;
+    --accent-color: #F87070;
     --main-purple: #D881F8;
     --font-set1: 'Kumbh Sans', Poppins, Monserat, 'Open Sans', Roboto, sans-serif;
     --font-set2: 'Roboto Slab', Lora, Merriweather, 'PT Serif', Arvo, 'Playfair Display', 'Noto serif';
@@ -21,9 +22,11 @@ body{
     width: 100%;
     height: 100%;
     overflow-x: hidden;
+    user-select: none;
 }
+
 /*Header*/
-.header{
+.header-section{
     width: 100%;
     height: 15vh;
     display: flex;
@@ -32,20 +35,19 @@ body{
 }
 
 /*Main*/
-.main{
+.main-section{
     width: 100%;
     height: 100%;
-    border: 1px solid #fff
 }
     /*status*/
-.status{
+.status-div {
     width: 100%;
     height: 15vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.status-pill{
+.status-pill {
     width: 380px;
     height: 62px;
     border-radius: 32px;
@@ -55,18 +57,46 @@ body{
     position: relative;
     background-color: var(--second-blue);
 }
-.pill{
+.pill {
     height: 52px;
     width: 120px;
     border-radius: 26px;
     text-align: center;
+}  
+input[type="radio"] {
+    display: none;
+}
+span{
+    user-select: none;
+} 
+input[type="radio"] + span {
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: 15px;
+    color: var(--custom-grey);
     font-family: var(--font-set1);
     font-weight: 700;
-    color: var(--white-blue);
 }
-.pomodoro-pill{
-    background-color: var(--main-red);
+input[type="radio"]:checked + span {
+    background-color: var(--accent-color);
     color: var(--second-blue);
+    border-radius: 26px;
+} 
+input[type="radio"] + span:hover {
+    cursor: pointer;
+}   
+input[type="radio"]:checked + span:hover {
+    background-color: var(--accent-color);
+    cursor: default;
+}
+button{
+    border: none;
+    outline: none;
+    background: none;
+}
+button:hover{
+    cursor: pointer;
 }
 
 /*Timer*/
@@ -78,17 +108,51 @@ body{
 .timer-container{
     width: 420px;
     height: 420px;
-    border: 1px solid red;
+}
+.timer-text{
+    fill: var(--second-white);
+}
+.progress-ring{
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
 }
 
 /*Settings*/
 .settings{
-    height: 10vh;
+    height: 20vh;
     width: 100%;
-    border: 1px solid blue;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+
+/*Animations*/
+.pill:hover{
+    cursor: pointer;
+    transform-origin: 0%;
+    animation: move 0.2s ease-out 1;
+    transform: translateY(-3px);
+}
+.btn-txt:hover{
+    cursor: pointer;
+}
+@keyframes move{
+    0%{
+      transform: translateY(0px);
+    }
+    50%{
+      transform: translateY(-1px);
+    }
+    100%{
+      transform: translateY(-3px);
+    }
+  }
+
+button > p{
+    font-family: var(--font-set1);
+    font-weight: 700;
+    font-size: 1rem;
 }
 
 /*SCROLLBAR*/
