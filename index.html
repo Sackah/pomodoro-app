@@ -12,43 +12,59 @@
 </head>
 <body>
   <!--Start of header section-->
-  <section class="header">
+  <section class="header-section">
     <div class="header-container">
       <img class="header-logo" src="./assets/logo.svg" alt="pomodoro-logo">
     </div>
   </section>
   <!--End of header section-->
   <!--Start of main content section-->
-  <section class="main">
+  <section class="main-section">
     <!--Start of status div-->
-    <div class="status">
+    <div class="status-div">
       <div class="status-pill">
         <div class="pill pomodoro-pill">
-          <p>pomodoro</p>
+          <label>
+            <input type="radio" id="pomodoro" class="break-mode-btn" name="timer-type" value="pomodoro" checked>
+            <span>pomodoro</span>
+          </label>
         </div>
         <div class="pill short-break-pill">
-          <p>short break</p>
+          <label>
+            <input type="radio" id="short" class="break-mode-btn" name="timer-type" value="short-break">
+            <span>short break</span>
+          </label>
         </div>
         <div class="pill long-break-pill">
-          <p>long break</p>
+          <label>
+            <input type="radio" id="long" class="break-mode-btn" name="timer-type" value="long-break">
+            <span>long break</span>
+          </label>
         </div>
       </div>
     </div>
+    
     <!--End of status div-->
     <!--Start of timer div-->
     <div class="timer">
       <div class="timer-container">
-
+        <svg class="timer-circle" width="420" height="420">
+          <circle id="circ1" class="outer-circle" cx="210" cy="210" r="205" fill="#242747"/>
+          <circle id="circ2" class="inner-circle" cx="210" cy="210" r="182.5" fill="#161932"/>
+          <circle id="circ3" class="progress-ring" cx="210" cy="210" r="163" stroke-width="10" fill="#161932"/>
+          <text class="timer-text" x="50%" y="55%" text-anchor="middle" font-size="100"></text>
+          <text id="start-stop-text" class="btn-txt" x="50%" y="75%" text-anchor="middle" font-size="20" fill="#EFF1FA">START</text>
+          Sorry, your browser does not support inline SVG. 
+        </svg>
       </div>
     </div>
     <!--End of timer container-->
     <!--Start of settings div-->
     <div class="settings">
       <div class="settings-container">
-        <img src="./assets/icon-settings.svg" alt="settings-logo">
+        <button><img src="./assets/icon-settings.svg" alt="settings-logo"></button>
       </div>
-    </div>
-    start 
+    </div> 
     pause
     restart
 
@@ -64,6 +80,6 @@
 
     Apply
   </section>
-  
+  <script src="./js/main.js"></script>
 </body>
 </html>
