@@ -9,19 +9,26 @@ var font2 = "'Roboto Slab', Lora, Merriweather, 'PT Serif', Arvo, 'Playfair Disp
 var font3 = "'Space Mono', 'IBM Plex Mono', 'Fira Mono', 'Anonymous Pro', monospace";
 
 let accent_color = red;
+let font_style = font1;
 
-const progressRing = document.querySelector(".progress-ring");
-progressRing.setAttribute('stroke', accent_color);
 
 /*
                         MAIN
                                                             */
             //get circle properties
-const radius = progressRing.getAttribute("r");
+const progressRing = document.querySelector(".progress-ring");
+const parentSvg = document.querySelector(".timer-circle");
+const parentWidth = parentSvg.getAttribute("width");
+//console.log(parentWidth);
+progressRing.setAttribute('stroke', accent_color);
+const radiusInPercentage = progressRing.getAttribute("r");
+const percent = parseFloat(radiusInPercentage);
+const radius = (percent/100) * parentWidth;
 const circumference = (2*Math.PI) * radius;
 //set dasharray and dashoffset to the circumference
 progressRing.setAttribute('stroke-dasharray', `${circumference} ${circumference}`);
 progressRing.setAttribute('stroke-dashoffset', circumference);
+
                     //timer
 let timerRunning = false;
 const durations = {
@@ -32,6 +39,7 @@ const durations = {
 const timerDuration = durations.pomodoro;
 const durationInSeconds = timerDuration * 60; //get time in seconds
 const timer_text = document.querySelector('.timer-text')//fetch timer text element
+timer_text.setAttribute("font-family", font_style);//change timer text to select style
 let remainingTime = durationInSeconds;
 timer_text.innerHTML = formatTime(remainingTime);//display remaining time in conventional format when remaining time = start time
 
@@ -41,6 +49,7 @@ timer_text.innerHTML = formatTime(remainingTime);//display remaining time in con
                                                             */
         //event listener for starting and pausing
 const start_stop = document.querySelector(".btn-txt");
+start_stop.setAttribute("font-family", font_style);//change button text to select style
 let interval;
 start_stop.addEventListener('click', () => {
     if(timerRunning){
