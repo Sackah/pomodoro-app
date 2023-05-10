@@ -39,15 +39,15 @@ body{
     width: 100%;
     height: 100%;
 }
-    /*status*/
-.status-div {
+/*Durations*/
+.durations-div {
     width: 100%;
     height: 15vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.status-pill {
+.durations-pill {
     width: 380px;
     height: 62px;
     border-radius: 32px;
@@ -106,8 +106,8 @@ button:hover{
     justify-content: center;
 }
 .timer-container{
-    width: 420px;
-    height: 420px;
+    width: 450px;
+    height: 450px;
 }
 .timer-text{
     fill: var(--second-white);

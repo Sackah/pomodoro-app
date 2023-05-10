@@ -74,9 +74,10 @@ function countdown(){
     progressPercent(remainingTime);
 
     if(remainingTime <= 0){
+        clearInterval(interval);
         timerRunning = false;
         start_stop.innerHTML = 'RESTART';
-        remainingTime = timerDuration; //reset the remaining time back to initial
+        remainingTime = durationInSeconds; //reset the remaining time back to initial
     }
 };
     //function for converting time in seconds to minutes:seconds display format
