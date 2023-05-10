@@ -20,9 +20,9 @@
   <!--End of header section-->
   <!--Start of main content section-->
   <section class="main-section">
-    <!--Start of status div-->
-    <div class="status-div">
-      <div class="status-pill">
+    <!--Start of durations div-->
+    <div class="durations-div">
+      <div class="durations-pill">
         <div class="pill pomodoro-pill">
           <label>
             <input type="radio" id="pomodoro" class="break-mode-btn" name="timer-type" value="pomodoro" checked>
@@ -44,16 +44,22 @@
       </div>
     </div>
     
-    <!--End of status div-->
+    <!--End of durations div-->
     <!--Start of timer div-->
     <div class="timer">
       <div class="timer-container">
-        <svg class="timer-circle" width="420" height="420">
-          <circle id="circ1" class="outer-circle" cx="210" cy="210" r="205" fill="#242747"/>
-          <circle id="circ2" class="inner-circle" cx="210" cy="210" r="182.5" fill="#161932"/>
-          <circle id="circ3" class="progress-ring" cx="210" cy="210" r="163" stroke-width="10" fill="#161932"/>
-          <text class="timer-text" x="50%" y="55%" text-anchor="middle" font-size="100"></text>
-          <text id="start-stop-text" class="btn-txt" x="50%" y="75%" text-anchor="middle" font-size="20" fill="#EFF1FA">START</text>
+        <svg class="timer-circle" width="450" height="450"> <!--fill="#242747"-->
+          <defs>
+            <filter id="blur-filter">
+              <feGaussianBlur stdDeviation="20" />
+            </filter>
+          </defs>
+          <circle class="bg-blur" cx="46%" cy="46%" r="39.56%" fill="#393e74" filter="url(#blur-filter)" />
+          <circle id="circ1" class="outer-circle" cx="50%" cy="50%" r="41.78%" fill="#242747"/>
+          <circle id="circ2" class="inner-circle" cx="50%" cy="50%" r="36.78%" fill="#161932"/>
+          <circle id="circ3" class="progress-ring" cx="50%" cy="50%" r="31.11%" stroke-width="10" fill="#161932"/>
+          <text class="timer-text" x="50%" y="55%" text-anchor="middle" font-size="90" font-weight="700"></text>
+          <text id="start-stop-text" class="btn-txt" x="50%" y="68%" text-anchor="middle" font-size="18" font-weight="600" fill="#EFF1FA">START</text>
           Sorry, your browser does not support inline SVG. 
         </svg>
       </div>
@@ -62,7 +68,7 @@
     <!--Start of settings div-->
     <div class="settings">
       <div class="settings-container">
-        <button><img src="./assets/icon-settings.svg" alt="settings-logo"></button>
+        <button class="settings-btn"><img src="./assets/icon-settings.svg" alt="settings-logo"></button>
       </div>
     </div> 
     pause
