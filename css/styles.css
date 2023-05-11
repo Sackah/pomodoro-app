@@ -130,7 +130,13 @@ button:hover{
 }
 
 /*Settings*/
-.settings{
+.settings-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.settings-container{
     height: 20vh;
     width: 100%;
     display: flex;
@@ -142,6 +148,42 @@ button:hover{
     animation: enlarge 0.2s ease-out;
     transform: scale(1.08);
 }
+.hidden{
+    display: none !important;
+}
+#settingsMenu{
+    background-color: var(--second-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    height: 68%;
+    position: absolute;
+    top: 21vh;
+    border-radius: 22px;
+}
+#menu-contents{
+    width: 85%;
+    height: 100%;
+}
+.divider{
+    border-bottom: 1px solid var(--white-blue);
+}
+.settings-head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 20%;
+}
+.settings-head-txt{
+    color: var(--main-blue);
+    font-size: 1.8rem;
+}
+.close-btn-fill:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
 
 /*Animations*/
 

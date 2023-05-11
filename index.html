@@ -66,25 +66,33 @@
     </div>
     <!--End of timer container-->
     <!--Start of settings div-->
-    <div class="settings">
+    <div class="settings-div">
       <div class="settings-container">
         <button class="settings-btn"><img src="./assets/icon-settings.svg" alt="settings-logo"></button>
       </div>
-    </div> 
-    pause
-    restart
-
-    Settings
-
-    Time (minutes)
-    pomodoro
-    short break
-    long break
-
-    Font
-    Color
-
-    Apply
+      <div id="settingsMenu" class="hidden">
+        <section id="menu-contents">
+          <div class="settings-head">
+            <h2 class="settings-head-txt">Settings</h2>
+            <svg class="close-btn" xmlns="http://www.w3.org/2000/svg" width="14" height="14"><path class="close-btn-fill" fill="#1E213F" fill-rule="evenodd" d="M11.95.636l1.414 1.414L8.414 7l4.95 4.95-1.414 1.414L7 8.414l-4.95 4.95L.636 11.95 5.586 7 .636 2.05 2.05.636 7 5.586l4.95-4.95z" opacity=".5"/></svg>
+            <!--<img class="close-btn" src="./assets/icon-close.svg"/>-->
+          </div>
+          <div class="divider"></div>
+          <div class="divider wide"></div>
+          
+    
+          Time (minutes)
+          pomodoro
+          short break
+          long break
+    
+          Font
+          Color
+    
+          Apply
+        </section>
+      </div>
+    </div>
   </section>
   <script src="./js/main.js"></script>
 </body>
