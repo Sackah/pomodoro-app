@@ -4,6 +4,7 @@
 var red = '#F87070';
 var purple = '#D881F8';
 var blue = '#70f3f8';
+var deepBlue = '#1E213F';
 var font1 = "'Kumbh Sans', Poppins, Monserat, 'Open Sans', Roboto, sans-serif"
 var font2 = "'Roboto Slab', Lora, Merriweather, 'PT Serif', Arvo, 'Playfair Display', 'Noto serif'";
 var font3 = "'Space Mono', 'IBM Plex Mono', 'Fira Mono', 'Anonymous Pro', monospace";
@@ -12,19 +13,21 @@ let accent_color = red;
 let font_style = font1;
 
 const timer_text = document.querySelector('.timer-text')//fetch timer text element
-timer_text.setAttribute("font-family", font_style);//change timer text to select style
+timer_text.style.fontFamily = font_style;//change timer text to select style
 const start_stop = document.querySelector(".btn-txt");//fetch start button element
-start_stop.setAttribute("font-family", font_style);//change button text to select style
+start_stop.style.fontFamily = font_style;//change button text to select style
+const settingsHeaderText = document.querySelector(".settings-head-txt");//fetch settings header text element
+settingsHeaderText.style.fontFamily = font_style;//set text to select style
 
 /*
                         MAIN
                                                             */
             //get circle properties
 const progressRing = document.querySelector(".progress-ring");
+progressRing.setAttribute('stroke', accent_color);
 const parentSvg = document.querySelector(".timer-circle");
 const parentWidth = parentSvg.getAttribute("width");
 //console.log(parentWidth);
-progressRing.setAttribute('stroke', accent_color);
 const radiusInPercentage = progressRing.getAttribute("r");
 const percent = parseFloat(radiusInPercentage);
 const radius = (percent/100) * parentWidth;
@@ -79,6 +82,18 @@ start_stop.addEventListener('click', () => {
         timerRunning = true;
         start_stop.innerHTML = 'PAUSE';// change start button to pause
     }
+});
+
+        //event listener for settings toggle
+const settingsButton = document.querySelector(".settings-btn");
+const closeButton = document.querySelector(".close-btn");
+const settingsMenu = document.querySelector('#settingsMenu');
+
+settingsButton.addEventListener('click', function () {
+    settingsMenu.classList.toggle('hidden');
+});
+closeButton.addEventListener('click', function () {
+    settingsMenu.classList.toggle('hidden');
 });
 
 
