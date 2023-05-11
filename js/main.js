@@ -11,6 +11,10 @@ var font3 = "'Space Mono', 'IBM Plex Mono', 'Fira Mono', 'Anonymous Pro', monosp
 let accent_color = red;
 let font_style = font1;
 
+const timer_text = document.querySelector('.timer-text')//fetch timer text element
+timer_text.setAttribute("font-family", font_style);//change timer text to select style
+const start_stop = document.querySelector(".btn-txt");//fetch start button element
+start_stop.setAttribute("font-family", font_style);//change button text to select style
 
 /*
                         MAIN
@@ -30,27 +34,41 @@ progressRing.setAttribute('stroke-dasharray', `${circumference} ${circumference}
 progressRing.setAttribute('stroke-dashoffset', circumference);
 
                     //timer
+let interval;
 let timerRunning = false;
 const durations = {
     pomodoro : 25,
     shortbreak: 5,
     longbreak : 15
 };
-const timerDuration = durations.pomodoro;
-const durationInSeconds = timerDuration * 60; //get time in seconds
-const timer_text = document.querySelector('.timer-text')//fetch timer text element
-timer_text.setAttribute("font-family", font_style);//change timer text to select style
+let timerDuration = durations.pomodoro;
+
+let durationInSeconds = timerDuration * 60; //get time in seconds
 let remainingTime = durationInSeconds;
 timer_text.innerHTML = formatTime(remainingTime);//display remaining time in conventional format when remaining time = start time
+
+//iterate over all break mode selectors and change timerDuration accordingly
+const break_selectors = document.querySelectorAll(".break-mode-btn");
+break_selectors.forEach((breaks) => {
+    breaks.addEventListener('change', () => {
+        if (breaks.checked){
+            clearInterval(interval);
+            timerDuration = durations[breaks.value];
+            durationInSeconds = timerDuration * 60;
+            remainingTime = durationInSeconds;
+            timer_text.innerHTML = formatTime(remainingTime);
+            start_stop.innerHTML = 'START'; //change pause button to start
+            console.log(timerDuration);
+        }
+    });
+});
+
 
 
 /*
                     EVENT LISTENERS
                                                             */
         //event listener for starting and pausing
-const start_stop = document.querySelector(".btn-txt");
-start_stop.setAttribute("font-family", font_style);//change button text to select style
-let interval;
 start_stop.addEventListener('click', () => {
     if(timerRunning){
         clearInterval(interval);

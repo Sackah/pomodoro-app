@@ -126,8 +126,6 @@ button:hover{
 .btn-txt:hover{
     cursor: pointer;
     transform-origin: 50% 50%;
-    animation: enlarge 0.3s ease-out;
-    transform: scale(1.08);
     fill: #B1CDEC;
 }
 
