@@ -23,6 +23,8 @@ body{
     height: 100%;
     overflow-x: hidden;
     user-select: none;
+    margin: 0;
+    border: none;
 }
 
 /*Header*/
@@ -66,9 +68,6 @@ body{
 input[type="radio"] {
     display: none;
 }
-span{
-    user-select: none;
-} 
 input[type="radio"] + span {
     display: block;
     height: 100%;
@@ -78,28 +77,28 @@ input[type="radio"] + span {
     font-family: var(--font-set1);
     font-weight: 700;
 }
-input[type="radio"]:checked + span {
+.break-mode-btn:checked + .break-mode-btn-span {
     background-color: var(--accent-color);
     color: var(--second-blue) !important;
     border-radius: 26px;
 } 
-input[type="radio"] + span:hover {
+.break-mode-btn + .break-mode-btn-span:hover {
     cursor: pointer;
     color: var(--white-blue);
     transform-origin: 0%;
     animation: move 0.2s ease-out 1;
     transform: translateY(-3px);
 }   
-input[type="radio"]:checked + span:hover {
+.break-mode-btn:checked + .break-mode-btn-span:hover {
     background-color: var(--accent-color);
     cursor: default;
 }
-button{
+.settings-btn{
     border: none;
     outline: none;
     background: none;
 }
-button:hover{
+.settings-btn:hover{
     cursor: pointer;
 }
 
@@ -110,8 +109,8 @@ button:hover{
     justify-content: center;
 }
 .timer-container, .timer-circle{
-    width: 450px;
-    height: 450px;
+    width: 480px;
+    height: 480px;
 }
 .timer-text{
     fill: var(--second-white);
@@ -137,7 +136,7 @@ button:hover{
     flex-direction: column;
 }
 .settings-container{
-    height: 20vh;
+    height: 12vh;
     width: 100%;
     display: flex;
     align-items: center;
@@ -152,14 +151,14 @@ button:hover{
     display: none !important;
 }
 #settingsMenu{
-    background-color: var(--second-white);
+    background-color: var(--main-white);
     display: flex;
     align-items: center;
     justify-content: center;
     width: 40%;
     height: 68%;
     position: absolute;
-    top: 21vh;
+    top: 22vh;
     border-radius: 22px;
 }
 #menu-contents{
@@ -169,7 +168,12 @@ button:hover{
 .divider{
     border-bottom: 1px solid var(--white-blue);
 }
-.settings-head{
+.wide{
+    width: 100%;
+    position: absolute;
+    right: 0%;
+}
+.settings-head, .font-settings, .color-settings{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -182,6 +186,84 @@ button:hover{
 .close-btn-fill:hover{
     opacity: 1;
     cursor: pointer;
+}
+.time-settings{
+    height: 30%;
+}
+h3{
+    font-family: var(--font-set1);
+    color: var(--main-blue);
+    font-size: 0.85rem;
+    letter-spacing: 0.3rem;
+    margin-top: 25px;
+}
+input{
+    display: block;
+    width: 90%;
+    height: 45px;
+    background-color: buttonface;
+    border: none;
+    border-radius: 10px;
+    padding: 10%;
+    font-family: var(--font-set1);
+    font-weight: 700;
+    color: var(--main-blue);
+}
+p{
+    font-family: var(--font-set1);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--main-blue);
+    opacity: 0.4;
+    margin: 0;
+    margin-bottom: 5px;
+    border: none;
+    padding: 0;
+}
+.time-setter{
+    width: 100%;
+    position: relative;
+    border: none;
+    /*display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;*/
+}
+label[for="pomodoro-setter"]{
+    width: 33%;
+    left: 0%;
+    position: absolute;
+}
+label[for="shortbreak-setter"]{
+    width: 33%;
+    position: absolute;
+    left: 35%;
+}
+label[for="longbreak-setter"]{
+    width: 33%;
+    position: absolute;
+    left: 70%;
+}
+.custom-number-input::-webkit-inner-spin-button,
+.custom-number-input::-webkit-outer-spin-button {
+  appearance: none;
+}
+.increase-up, .increase-down{
+    border: none;
+    outline: none;
+    position: absolute;
+}
+.increament-button-fill:hover{
+    stroke-opacity: 1;
+    cursor: pointer;
+}
+.increase-up{
+    top: 38%;
+    right: 15%;
+}
+.increase-down{
+    top: 62%;
+    right: 15%;
 }
 
 
@@ -207,6 +289,36 @@ button:hover{
     }
     100% {
       transform: scale(1.08);
+    }
+}
+
+/*In media queries, set label[for="pomodoro-setter"], label[for="shortbreak-setter"] and
+label[for="longbreak-setter"] displays to relative and .time-setter display to flex  */
+
+/*Media queries*/ 
+    /*tablet*/
+@media (max-width: 1020px) and (min-width: 592px){
+    body{
+        overflow: hidden;
+    }
+    #settingsMenu{
+        width: 70%;
+        height: 45%;
+    }
+}
+    /*nest hub*/
+@media (max-width: 1025px) and (min-width: 1021px){
+    #settingsMenu{
+        width: 50%;
+        height: 75%;
+        top: 20vh;
+    }
+}
+    /*laptop with hidpi screen*/
+@media (max-width: 1441px) and (min-width: 1439px){
+    #settingsMenu{
+        width: 45%;
+        height: 55%;
     }
 }
 
