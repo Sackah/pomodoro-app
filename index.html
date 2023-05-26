@@ -26,19 +26,19 @@
         <div class="pill pomodoro-pill">
           <label>
             <input type="radio" id="pomodoro" class="break-mode-btn" name="timer-type" value="pomodoro" checked>
-            <span>pomodoro</span>
+            <span class="break-mode-btn-span">pomodoro</span>
           </label>
         </div>
         <div class="pill short-break-pill">
           <label>
             <input type="radio" id="short" class="break-mode-btn" name="timer-type" value="shortbreak">
-            <span>short break</span>
+            <span class="break-mode-btn-span">short break</span>
           </label>
         </div>
         <div class="pill long-break-pill">
           <label>
             <input type="radio" id="long" class="break-mode-btn" name="timer-type" value="longbreak">
-            <span>long break</span>
+            <span class="break-mode-btn-span">long break</span>
           </label>
         </div>
       </div>
@@ -48,7 +48,7 @@
     <!--Start of timer div-->
     <div class="timer">
       <div class="timer-container">
-        <svg class="timer-circle" width="450" height="450"> <!--fill="#242747"-->
+        <svg class="timer-circle" width="480" height="480"> <!--fill="#242747"-->
           <defs>
             <filter id="blur-filter">
               <feGaussianBlur stdDeviation="20" />
@@ -77,14 +77,33 @@
             <svg class="close-btn" xmlns="http://www.w3.org/2000/svg" width="14" height="14"><path class="close-btn-fill" fill="#1E213F" fill-rule="evenodd" d="M11.95.636l1.414 1.414L8.414 7l4.95 4.95-1.414 1.414L7 8.414l-4.95 4.95L.636 11.95 5.586 7 .636 2.05 2.05.636 7 5.586l4.95-4.95z" opacity=".5"/></svg>
             <!--<img class="close-btn" src="./assets/icon-close.svg"/>-->
           </div>
-          <div class="divider"></div>
           <div class="divider wide"></div>
+          <div class="time-settings">
+            <h3>TIME (MINUTES)</h3>
+            <fieldset class="time-setter">
+              <label for="pomodoro-setter"><p>pomodoro</p><input type="number" id="pomodoro-setter" class="custom-number-input" value="25" min="10" max="50"/>
+                <button class="pomo-up increase-up"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="7"><path class="increament-button-fill" fill="none" stroke="#1E213F" stroke-opacity=".25" stroke-width="2" d="M1 6l6-4 6 4"/></svg></button>
+                <button class="pomo-down increase-down"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="7"><path class="increament-button-fill" fill="none" stroke="#1E213F" stroke-opacity=".25" stroke-width="2" d="M1 1l6 4 6-4"/></svg></button>
+              </label>
+              <label for="shortbreak-setter"><p>short break</p><input type="number" id="shortbreak-setter" class="custom-number-input" value="15" min="10" max="20"/>
+                <button class="short-up increase-up"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="7"><path class="increament-button-fill" fill="none" stroke="#1E213F" stroke-opacity=".25" stroke-width="2" d="M1 6l6-4 6 4"/></svg></button>
+                <button class="short-down increase-down"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="7"><path class="increament-button-fill" fill="none" stroke="#1E213F" stroke-opacity=".25" stroke-width="2" d="M1 1l6 4 6-4"/></svg></button>
+              </label>
+              <label for="longbreak-setter"><p>long break</p><input type="number" id="longbreak-setter" class="custom-number-input" value="5" min="1" max="10"/>
+                <button class="long-up increase-up"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="7"><path class="increament-button-fill" fill="none" stroke="#1E213F" stroke-opacity=".25" stroke-width="2" d="M1 6l6-4 6 4"/></svg></button>
+                <button class="long-down increase-down"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="7"><path class="increament-button-fill" fill="none" stroke="#1E213F" stroke-opacity=".25" stroke-width="2" d="M1 1l6 4 6-4"/></svg></button>
+              </label>
+            </fieldset>
+          </div>
+          <div class="divider"></div>
+          <div class="font-settings">
+
+          </div>
+          <div class="divider"></div>
+          <div class="color-settings">
+
+          </div>
           
-    
-          Time (minutes)
-          pomodoro
-          short break
-          long break
     
           Font
           Color

@@ -84,7 +84,7 @@ start_stop.addEventListener('click', () => {
     }
 });
 
-        //event listener for settings toggle
+        //event listener for settings menu toggle
 const settingsButton = document.querySelector(".settings-btn");
 const closeButton = document.querySelector(".close-btn");
 const settingsMenu = document.querySelector('#settingsMenu');
@@ -94,6 +94,24 @@ settingsButton.addEventListener('click', function () {
 });
 closeButton.addEventListener('click', function () {
     settingsMenu.classList.toggle('hidden');
+});
+
+        //event listener for arrow button increamentors
+const pomodoroArrowUp = document.querySelector(".pomo-up");
+const pomodoroArrowDown = document.querySelector(".pomo-down");
+    const pomodoroInput = document.querySelector("#pomodoro-setter");
+const shortbreakArrowUp = document.querySelector(".short-up");
+const shortbreakArrowDown = document.querySelector(".short-down");
+    const shortbreakInput = document.querySelector("#shortbreak-setter");
+const longbreakArrowUp = document.querySelector(".long-up");
+const longbreakArrowDown = document.querySelector(".long-down");
+    const longbreakInput = document.querySelector("#longbreak-setter");
+
+pomodoroArrowUp.addEventListener('click', function(){
+    pomodoroInput.stepUp();
+});
+pomodoroArrowDown.addEventListener('click', function(){
+    pomodoroInput.stepDown();
 });
 
 
