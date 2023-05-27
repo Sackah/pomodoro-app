@@ -25,9 +25,12 @@ body{
     user-select: none;
     margin: 0;
     border: none;
+    padding: 0;
 }
 
-/*Header*/
+/*
+                    HEADER
+                                                            */
 .header-section{
     width: 100%;
     height: 15vh;
@@ -36,7 +39,9 @@ body{
     justify-content: center;
 }
 
-/*Main*/
+/*
+                    MAIN
+                                                            */
 .main-section{
     width: 100%;
     height: 100%;
@@ -102,7 +107,9 @@ input[type="radio"] + span {
     cursor: pointer;
 }
 
-/*Timer*/
+/*
+                    TIMER
+                                                            */
 .timer{
     display: flex;
     align-items: center;
@@ -128,7 +135,9 @@ input[type="radio"] + span {
     fill: #B1CDEC;
 }
 
-/*Settings*/
+/*
+                    SETTINGS
+                                                            */
 .settings-div{
     display: flex;
     align-items: center;
@@ -158,7 +167,7 @@ input[type="radio"] + span {
     width: 40%;
     height: 68%;
     position: absolute;
-    top: 22vh;
+    top: 21vh;
     border-radius: 22px;
 }
 #menu-contents{
@@ -293,21 +302,20 @@ label[for="longbreak-setter"]{
 }
 
 /*In media queries, set label[for="pomodoro-setter"], label[for="shortbreak-setter"] and
-label[for="longbreak-setter"] displays to relative and .time-setter display to flex  */
+label[for="longbreak-setter"] positions to relative and .time-setter display to flex  */
 
-/*Media queries*/ 
+/*
+                    MEDIA QUERIES
+                                                            */
     /*tablet*/
-@media (max-width: 1020px) and (min-width: 592px){
-    body{
-        overflow: hidden;
-    }
+@media (max-width: 850px) and (min-width: 539px){
     #settingsMenu{
         width: 70%;
         height: 45%;
     }
 }
     /*nest hub*/
-@media (max-width: 1025px) and (min-width: 1021px){
+@media (max-width: 1025px) and (min-width: 912px){
     #settingsMenu{
         width: 50%;
         height: 75%;
@@ -321,9 +329,179 @@ label[for="longbreak-setter"] displays to relative and .time-setter display to f
         height: 55%;
     }
 }
+    /*mobile*/
+@media (max-width: 541px) and (min-width: 339px){
+    .durations-pill {
+        width: 90%;
+    }
+    .timer-container, .timer-circle{
+        width: 400px;
+        height: 400px;
+    }
+    .header-section{
+        height: 12vh;
+    }
+    .durations-div{
+        height: 11vh;
+    }
+}
+    /*SE*/
+@media (max-width: 375px) and (min-width: 340px){
+    #settingsMenu{
+        width: 90% !important;
+        height: 82% !important;
+        top: 6vh !important;
+    }
+    .settings-head{
+        height: 11% !important;
+    }
+    h3{
+        font-size: 0.7rem !important;
+        margin-top: 5% !important;
+        margin-bottom: 0% !important;
+    }
+    p{
+        font-size: 0.8rem !important;
+    }
+    .header-section{
+        height: 13vh;
+    }
+    .durations-div{
+        height: 13vh;
+    }
+    .durations-pill {
+        width: 90%;
+        height: 60px;
+        border-radius: 30px;
+    }
+    .timer-container, .timer-circle{
+        width: 370px;
+        height: 370px;
+    }
+    .pill {
+        height: 46px;
+        width: 30%;
+        border-radius: 23px;
+    } 
+    input[type="radio"] + span {
+        font-size: 0.77rem;
+    }
+    .timer-text{
+        font-size: 75px;
+    }
+    .btn-txt{
+        font-size: 14px;
+    }
+}
+/*foldable*/
+@media (max-width: 300px) and (min-width: 200px){
+    #settingsMenu{
+        width: 90% !important;
+        height: 82% !important;
+        top: 6vh !important;
+    }
+    .settings-head{
+        height: 11% !important;
+    }
+    h3{
+        font-size: 0.7rem !important;
+        margin-top: 5% !important;
+        margin-bottom: 0% !important;
+    }
+    p{
+        font-size: 0.8rem !important;
+    }
+    .header-section{
+        height: 13vh;
+    }
+    .durations-div{
+        height: 15vh;
+    }
+    .durations-pill {
+        width: 90%;
+        height: 45px;
+        border-radius: 22.5px;
+    }
+    .timer-container, .timer-circle{
+        width: 260px;
+        height: 260px;
+    }
+    .pill {
+        height: 36px;
+        width: 30%;
+        border-radius: 18px;
+    } 
+    input[type="radio"] + span {
+        font-size: 0.52rem;
+    }
+    .timer-text{
+        font-size: 60px;
+    }
+    .btn-txt{
+        font-size: 10px;
+    }
+}
+/*mobile to foldable*/
+@media (max-width: 541px) and (min-width: 200px){
+    #settingsMenu{
+        width: 90%;
+        height: 75%;
+        top: 6vh;
+    }
+    .settings-head{
+        height: 12%;
+    }
+    h3{
+        font-size: 0.9rem;
+        margin-top: 5%;
+        margin-bottom: 0%;
+    }
+    p{
+        font-size: 1rem;
+    }
+    .time-settings{
+        height: 38%;
+        width: 100%;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .settings-head-txt{
+        font-size: 1.3rem;
+    }
+    label[for="pomodoro-setter"], label[for="shortbreak-setter"], label[for="longbreak-setter"]{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        left: 0%;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        width: 100%;
+    }
+    fieldset{
+        padding: 0;
+    }
+    .increase-up{
+        top: 10%;
+        right: 7%;
+    }
+    .increase-down{
+        top: 50%;
+        right: 7%;
+    }
+    .fifty{
+        width: 50%;
+    }
+}
 
-/*SCROLLBAR*/
-/* Set scrollbar width and track color */
+/*
+                    SCROLLBAR
+                                                            */
+    /* Set scrollbar width and track color */
 ::-webkit-scrollbar {
     width: 10px;
     background-color: var(--main-blue);
