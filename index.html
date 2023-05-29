@@ -68,7 +68,7 @@
     <!--Start of settings div-->
     <div class="settings-div">
       <div class="settings-container">
-        <button class="settings-btn"><img src="./assets/icon-settings.svg" alt="settings-logo"></button>
+        <button class="settings-btn" -webkit-tap-highlight-color="transparent"><img src="./assets/icon-settings.svg" alt="settings-logo"></button>
       </div>
       <div id="settingsMenu" class="hidden">
         <section id="menu-contents">
@@ -82,18 +82,18 @@
             <h3>TIME (MINUTES)</h3>
             <fieldset class="time-setter">
               <label for="pomodoro-setter"><span class="fifty"><p>pomodoro</p></span><span class="fifty"><input type="number" id="pomodoro-setter" class="custom-number-input" value="25" min="10" max="50"/>
-                <button class="pomo-up increase-up"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="7"><path class="increament-button-fill" fill="none" stroke="#1E213F" stroke-opacity=".25" stroke-width="2" d="M1 6l6-4 6 4"/></svg></button>
-                <button class="pomo-down increase-down"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="7"><path class="increament-button-fill" fill="none" stroke="#1E213F" stroke-opacity=".25" stroke-width="2" d="M1 1l6 4 6-4"/></svg></button>
+                <button class="pomo-up increase-up" aria-label="increase"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="7"><path class="increament-button-fill" fill="none" stroke="#1E213F" stroke-opacity=".25" stroke-width="2" d="M1 6l6-4 6 4"/></svg></button>
+                <button class="pomo-down decrease-down" aria-label="decrease"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="7"><path class="increament-button-fill" fill="none" stroke="#1E213F" stroke-opacity=".25" stroke-width="2" d="M1 1l6 4 6-4"/></svg></button>
                 </span>
               </label>
               <label for="shortbreak-setter"><span class="fifty"><p>short break</p></span><span class="fifty"><input type="number" id="shortbreak-setter" class="custom-number-input" value="15" min="10" max="20"/>
-                <button class="short-up increase-up"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="7"><path class="increament-button-fill" fill="none" stroke="#1E213F" stroke-opacity=".25" stroke-width="2" d="M1 6l6-4 6 4"/></svg></button>
-                <button class="short-down increase-down"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="7"><path class="increament-button-fill" fill="none" stroke="#1E213F" stroke-opacity=".25" stroke-width="2" d="M1 1l6 4 6-4"/></svg></button>
+                <button class="short-up increase-up" aria-label="increase"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="7"><path class="increament-button-fill" fill="none" stroke="#1E213F" stroke-opacity=".25" stroke-width="2" d="M1 6l6-4 6 4"/></svg></button>
+                <button class="short-down decrease-down" aria-label="decrease"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="7"><path class="increament-button-fill" fill="none" stroke="#1E213F" stroke-opacity=".25" stroke-width="2" d="M1 1l6 4 6-4"/></svg></button>
                 </span>
               </label>
               <label for="longbreak-setter"><span class="fifty"><p>long break</p></span><span class="fifty"><input type="number" id="longbreak-setter" class="custom-number-input" value="5" min="1" max="10"/>
-                <button class="long-up increase-up"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="7"><path class="increament-button-fill" fill="none" stroke="#1E213F" stroke-opacity=".25" stroke-width="2" d="M1 6l6-4 6 4"/></svg></button>
-                <button class="long-down increase-down"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="7"><path class="increament-button-fill" fill="none" stroke="#1E213F" stroke-opacity=".25" stroke-width="2" d="M1 1l6 4 6-4"/></svg></button>
+                <button class="long-up increase-up" aria-label="increase"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="7"><path class="increament-button-fill" fill="none" stroke="#1E213F" stroke-opacity=".25" stroke-width="2" d="M1 6l6-4 6 4"/></svg></button>
+                <button class="long-down decrease-down" aria-label="decrease"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="7"><path class="increament-button-fill" fill="none" stroke="#1E213F" stroke-opacity=".25" stroke-width="2" d="M1 1l6 4 6-4"/></svg></button>
                 </span>
               </label>
             </fieldset>
