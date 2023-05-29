@@ -267,7 +267,7 @@ label[for="longbreak-setter"]{
 .custom-number-input::-webkit-outer-spin-button {
   appearance: none;
 }
-.increase-up, .increase-down{
+.increase-up, .decrease-down{
     border: none;
     outline: none;
     position: absolute;
@@ -280,7 +280,7 @@ label[for="longbreak-setter"]{
     top: 38%;
     right: 15%;
 }
-.increase-down{
+.decrease-down{
     top: 62%;
     right: 15%;
 }
@@ -326,6 +326,7 @@ label[for="longbreak-setter"]{
 .sample-text{
     padding-left: 1px;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 .sample-text-radio:checked + .txt{
     color: buttonface;
@@ -371,8 +372,7 @@ label[for="longbreak-setter"] positions to relative and .time-setter display to 
     #settingsMenu{
         width: 70%;
         height: 45%;
-        position: fixed;
-        z-index: 9999;
+        position: absolute;
     }
 }
     /*nest hub*/
@@ -501,8 +501,7 @@ label[for="longbreak-setter"] positions to relative and .time-setter display to 
         width: 90%;
         height: 85%;
         top: 6vh;
-        position: fixed;
-        z-index: 9999;
+        position: absolute;
     }
     .settings-head{
         height: 12%;

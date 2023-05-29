@@ -113,7 +113,18 @@ pomodoroArrowUp.addEventListener('click', function(){
 pomodoroArrowDown.addEventListener('click', function(){
     pomodoroInput.stepDown();
 });
-
+shortbreakArrowUp.addEventListener('click', function(){
+    shortbreakInput.stepUp();
+});
+shortbreakArrowDown.addEventListener('click', function(){
+    shortbreakInput.stepDown();
+});
+longbreakArrowUp.addEventListener('click', function(){
+    longbreakInput.stepUp();
+});
+longbreakArrowDown.addEventListener('click', function(){
+    longbreakInput.stepDown();
+});
 
 /*
                     HELPER FUNCTIONS    
