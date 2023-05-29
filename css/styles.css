@@ -73,7 +73,7 @@ body{
 input[type="radio"] {
     display: none;
 }
-input[type="radio"] + span {
+.break-mode-btn-span {
     display: block;
     height: 100%;
     width: 100%;
@@ -125,6 +125,8 @@ input[type="radio"] + span {
 .progress-ring{
     transform: rotate(-90deg);
     transform-origin: 50% 50%;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 .btn-txt{
     letter-spacing: 0.8rem;
@@ -165,7 +167,7 @@ input[type="radio"] + span {
     align-items: center;
     justify-content: center;
     width: 40%;
-    height: 68%;
+    height: 72%;
     position: absolute;
     top: 21vh;
     border-radius: 22px;
@@ -182,11 +184,19 @@ input[type="radio"] + span {
     position: absolute;
     right: 0%;
 }
+fieldset{
+    margin: 0;
+    border: none;
+    padding: 0;
+}
 .settings-head, .font-settings, .color-settings{
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 20%;
+}
+.apply{
+    height: 10%;
 }
 .settings-head-txt{
     color: var(--main-blue);
@@ -211,12 +221,12 @@ input{
     width: 90%;
     height: 45px;
     background-color: buttonface;
+    color: var(--main-blue);
     border: none;
     border-radius: 10px;
     padding: 10%;
     font-family: var(--font-set1);
     font-weight: 700;
-    color: var(--main-blue);
 }
 p{
     font-family: var(--font-set1);
@@ -274,7 +284,56 @@ label[for="longbreak-setter"]{
     top: 62%;
     right: 15%;
 }
-
+.font-setter{
+    height: 100%;
+    width: 35%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.kumbh-sans{
+    font-family: var(--font-set1);
+    font-weight: 700;
+}
+.roboto-slab{
+    font-family: var(--font-set2);
+}
+.space-mono{
+    font-family: var(--font-set3);
+    font-weight: 700;
+}
+.kumbh-sans, .roboto-slab, .space-mono{
+    height: 42px;
+    width: 42px;
+    border-radius: 21px;
+    display: block;
+    text-align: center;
+    padding-top: 20%;
+}
+.txt{
+    color: var(--main-blue);
+    border: 3px solid buttonface;
+}
+.set-font{
+    height: 44px;
+    width: 44px;
+    border-radius: 22px;
+    background-color: buttonface;
+    display: flex;
+    align-items: center;
+}
+.sample-text{
+    padding-left: 1px;
+    cursor: pointer;
+}
+.sample-text-radio:checked + .txt{
+    color: buttonface;
+    background-color: var(--main-blue);
+}
+.sample-text-radio:hover + .txt{
+    border-color: var(--main-white);
+}
 
 /*Animations*/
 
@@ -312,6 +371,8 @@ label[for="longbreak-setter"] positions to relative and .time-setter display to 
     #settingsMenu{
         width: 70%;
         height: 45%;
+        position: fixed;
+        z-index: 9999;
     }
 }
     /*nest hub*/
@@ -334,10 +395,6 @@ label[for="longbreak-setter"] positions to relative and .time-setter display to 
     .durations-pill {
         width: 90%;
     }
-    .timer-container, .timer-circle{
-        width: 400px;
-        height: 400px;
-    }
     .header-section{
         height: 12vh;
     }
@@ -347,11 +404,6 @@ label[for="longbreak-setter"] positions to relative and .time-setter display to 
 }
     /*SE*/
 @media (max-width: 375px) and (min-width: 340px){
-    #settingsMenu{
-        width: 90% !important;
-        height: 82% !important;
-        top: 6vh !important;
-    }
     .settings-head{
         height: 11% !important;
     }
@@ -386,20 +438,12 @@ label[for="longbreak-setter"] positions to relative and .time-setter display to 
     input[type="radio"] + span {
         font-size: 0.77rem;
     }
-    .timer-text{
-        font-size: 75px;
-    }
     .btn-txt{
         font-size: 14px;
     }
 }
 /*foldable*/
 @media (max-width: 300px) and (min-width: 200px){
-    #settingsMenu{
-        width: 90% !important;
-        height: 82% !important;
-        top: 6vh !important;
-    }
     .settings-head{
         height: 11% !important;
     }
@@ -423,30 +467,42 @@ label[for="longbreak-setter"] positions to relative and .time-setter display to 
         border-radius: 22.5px;
     }
     .timer-container, .timer-circle{
-        width: 260px;
-        height: 260px;
+        width: 260px !important;
+        height: 260px !important;
     }
     .pill {
         height: 36px;
         width: 30%;
         border-radius: 18px;
     } 
-    input[type="radio"] + span {
+    .break-mode-btn-span {
         font-size: 0.52rem;
     }
     .timer-text{
-        font-size: 60px;
+        font-size: 50px !important;
     }
     .btn-txt{
         font-size: 10px;
     }
+    .font-setter{
+        width: 75% !important;
+    }
 }
 /*mobile to foldable*/
 @media (max-width: 541px) and (min-width: 200px){
+    .timer-container, .timer-circle{
+        width: 400px;
+        height: 400px;
+    }
+    .timer-text{
+        font-size: 75px;
+    }
     #settingsMenu{
         width: 90%;
-        height: 75%;
+        height: 85%;
         top: 6vh;
+        position: fixed;
+        z-index: 9999;
     }
     .settings-head{
         height: 12%;
@@ -495,6 +551,15 @@ label[for="longbreak-setter"] positions to relative and .time-setter display to 
     }
     .fifty{
         width: 50%;
+    }
+    .font-settings{
+        flex-direction: column;
+    }
+    .font-setter{
+        width: 55%;
+    }
+    .font-settings > h3{
+        margin-top: 10%;
     }
 }
 

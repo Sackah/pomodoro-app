@@ -26,7 +26,7 @@ settingsHeaderText.style.fontFamily = font_style;//set text to select style
 const progressRing = document.querySelector(".progress-ring");
 progressRing.setAttribute('stroke', accent_color);
 const parentSvg = document.querySelector(".timer-circle");
-const parentWidth = parentSvg.getAttribute("width");
+const parentWidth = parentSvg.clientWidth;
 //console.log(parentWidth);
 const radiusInPercentage = progressRing.getAttribute("r");
 const percent = parseFloat(radiusInPercentage);
