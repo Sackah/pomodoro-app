@@ -104,7 +104,7 @@
             <fieldset class="font-setter">
               <div class="set-font">
                 <label class="sample-text">
-                  <input type="radio" id="kumbh-sans-btn" class="sample-text-radio" name="font-type"/>
+                  <input type="radio" id="kumbh-sans-btn" class="sample-text-radio" name="font-type" checked/>
                   <span class="kumbh-sans txt">Aa</span>
                 </label>
               </div>
@@ -126,11 +126,42 @@
           <div class="color-settings">
             <h3>COLOR</h3>
             <fieldset class="color-setter">
-
+              <div class="set-color red">
+                <label class="sample-color">
+                  <input type="radio" id="red-btn" class="red-button" name="color-type" checked aria-label="red"/>
+                  <span class="checkmark">
+                    <svg class="checkmark-icon" viewBox="0 0 24 24">
+                      <path d="M5.293 11.293L9 15l9-9-1.414-1.414L9 12.172l-3.293-3.293-1.414 1.414z" />
+                    </svg>
+                  </span>
+                </label>
+              </div>
+              <div class="set-color blue">
+                <label class="sample-color">
+                  <input type="radio" id="blue-btn" class="blue-button" name="color-type" aria-label="blue"/>
+                  <span class="checkmark">
+                    <svg class="checkmark-icon" viewBox="0 0 24 24">
+                      <path d="M5.293 11.293L9 15l9-9-1.414-1.414L9 12.172l-3.293-3.293-1.414 1.414z" />
+                    </svg>
+                  </span>
+                </label>
+              </div>
+              <div class="set-color purple">
+                <label class="sample-color">
+                  <input type="radio" id="purple-btn" class="purple-button" name="color-type" aria-label="purple"/>
+                  <span class="checkmark">
+                    <svg class="checkmark-icon" viewBox="0 0 24 24">
+                      <path d="M5.293 11.293L9 15l9-9-1.414-1.414L9 12.172l-3.293-3.293-1.414 1.414z" />
+                    </svg>
+                  </span>
+                </label>
+              </div>
             </fieldset>
           </div>
           <div class="apply">
-            APPLY
+            <div class="apply-button">
+              <h4>Apply</h4>
+            </div>
           </div>
         </section>
       </div>

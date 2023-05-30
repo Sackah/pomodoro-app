@@ -45,6 +45,9 @@ body{
 .main-section{
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 /*Durations*/
 .durations-div {
@@ -195,9 +198,6 @@ fieldset{
     justify-content: space-between;
     height: 20%;
 }
-.apply{
-    height: 10%;
-}
 .settings-head-txt{
     color: var(--main-blue);
     font-size: 1.8rem;
@@ -206,8 +206,9 @@ fieldset{
     opacity: 1;
     cursor: pointer;
 }
+/*Time settings*/
 .time-settings{
-    height: 30%;
+    height: 28%;
 }
 h3{
     font-family: var(--font-set1);
@@ -241,12 +242,13 @@ p{
 }
 .time-setter{
     width: 100%;
+    height: 80%;
     position: relative;
     border: none;
-    /*display: flex;
+    display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;*/
+    justify-content: space-evenly;
 }
 label[for="pomodoro-setter"]{
     width: 33%;
@@ -284,6 +286,7 @@ label[for="longbreak-setter"]{
     top: 62%;
     right: 15%;
 }
+/*Font settings*/
 .font-setter{
     height: 100%;
     width: 35%;
@@ -331,9 +334,86 @@ label[for="longbreak-setter"]{
 .sample-text-radio:checked + .txt{
     color: buttonface;
     background-color: var(--main-blue);
+    border-color: var(--main-blue) !important;
 }
 .sample-text-radio:hover + .txt{
     border-color: var(--main-white);
+}
+/*Color settings*/
+.color-setter{
+    height: 100%;
+    width: 35%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.set-color{
+    height: 44px;
+    width: 44px;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+}
+.red{
+    background-color: var(--accent-color);
+}
+.blue{
+    background-color: var(--blue-green);
+}
+.purple{
+    background-color: var(--main-purple);
+}
+.checkmark {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+}
+.checkmark-icon {
+    width: 30px;
+    height: 30px;
+    padding-top: 10%;
+    fill: var(--main-blue);
+    stroke-linecap: butt;
+    stroke-linejoin: round;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+  }  
+  .sample-color input:checked + .checkmark .checkmark-icon {
+    opacity: 1;
+  }
+  .sample-color:hover{
+    cursor: pointer;
+  }
+  /*Apply button*/
+.apply{
+    height: 12%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.apply-button{
+    height: 54px;
+    width: 140px;
+    border-radius: 27px;
+    color: var(--main-white);
+    background-color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+h4{
+    font-size: 1rem;
+    font-family: var(--font-set1);
+    font-weight: 700;
+}
+.apply-button:hover, .apply-button:active{
+    cursor: pointer;
+    filter: brightness(1.2);
 }
 
 /*Animations*/
@@ -383,6 +463,11 @@ label[for="longbreak-setter"] positions to relative and .time-setter display to 
         top: 20vh;
     }
 }
+@media (max-width: 1280px){
+    .apply{
+        padding-top: 2%;
+    }
+}
     /*laptop with hidpi screen*/
 @media (max-width: 1441px) and (min-width: 1439px){
     #settingsMenu{
@@ -391,9 +476,9 @@ label[for="longbreak-setter"] positions to relative and .time-setter display to 
     }
 }
     /*mobile*/
-@media (max-width: 541px) and (min-width: 339px){
+@media (max-width: 538px) and (min-width: 339px){
     .durations-pill {
-        width: 90%;
+        width: 90% !important;
     }
     .header-section{
         height: 12vh;
@@ -426,9 +511,12 @@ label[for="longbreak-setter"] positions to relative and .time-setter display to 
         height: 60px;
         border-radius: 30px;
     }
-    .timer-container, .timer-circle{
-        width: 370px;
-        height: 370px;
+    .time-setter{
+        padding-top: 0 !important;
+    }
+    .timer, .timer-container, .timer-circle{
+        width: 360px !important;
+        height: 360px !important;
     }
     .pill {
         height: 46px;
@@ -462,11 +550,11 @@ label[for="longbreak-setter"] positions to relative and .time-setter display to 
         height: 15vh;
     }
     .durations-pill {
-        width: 90%;
+        width: 90% !important;
         height: 45px;
         border-radius: 22.5px;
     }
-    .timer-container, .timer-circle{
+    .timer, .timer-container, .timer-circle{
         width: 260px !important;
         height: 260px !important;
     }
@@ -478,24 +566,43 @@ label[for="longbreak-setter"] positions to relative and .time-setter display to 
     .break-mode-btn-span {
         font-size: 0.52rem;
     }
+    .time-setter{
+        padding-top: 0 !important;
+    }
     .timer-text{
         font-size: 50px !important;
     }
     .btn-txt{
         font-size: 10px;
     }
-    .font-setter{
+    .font-setter, .color-setter{
         width: 75% !important;
+    }
+    .apply-button{
+        height: 48px;
+        width: 120px;
+        border-radius: 24px;
+    }
+    .apply{
+        padding-top: 20% !important;
     }
 }
 /*mobile to foldable*/
 @media (max-width: 541px) and (min-width: 200px){
-    .timer-container, .timer-circle{
-        width: 400px;
-        height: 400px;
+    .time-setter{
+        width: 100%;
+        height: 100%;
+        padding-top: 10%;
+        position: relative;
+        border: none;
+        display: block;
+    }
+    .timer, .timer-container, .timer-circle{
+        width: 385px;
+        height: 385px;
     }
     .timer-text{
-        font-size: 75px;
+        font-size: 68px;
     }
     #settingsMenu{
         width: 90%;
@@ -544,21 +651,45 @@ label[for="longbreak-setter"] positions to relative and .time-setter display to 
         top: 10%;
         right: 7%;
     }
-    .increase-down{
+    .decrease-down{
         top: 50%;
         right: 7%;
     }
     .fifty{
         width: 50%;
     }
-    .font-settings{
+    .font-settings, .color-settings{
         flex-direction: column;
     }
-    .font-setter{
+    .font-setter, .color-setter{
         width: 55%;
     }
-    .font-settings > h3{
+    .font-settings > h3, .color-settings > h3{
         margin-top: 10%;
+    }
+    .apply{
+        padding-top: 17%;
+    }
+}
+/*Surface duo*/
+@media (max-width: 540px) and (min-width: 539px){
+    .durations-pill{
+        width: 70%;
+    }
+    .time-settings{
+        height: 42%;
+    }
+    .time-setter{
+        padding-top: 0 !important;
+    }
+    .time-settings > h3{
+        padding-top: 5%;
+    }
+    .font-settings > h3, .color-settings > h3{
+        margin-top: 5% !important;
+    }
+    .apply{
+        padding-top: 1px !important;
     }
 }
 
