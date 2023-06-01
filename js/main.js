@@ -13,18 +13,13 @@ let accent_color = red;
 let font_style = font1;
 
 const timer_text = document.querySelector('.timer-text')//fetch timer text element
-timer_text.style.fontFamily = font_style;//change timer text to select style
 const start_stop = document.querySelector(".btn-txt");//fetch start button element
-start_stop.style.fontFamily = font_style;//change button text to select style
-const settingsHeaderText = document.querySelector(".settings-head-txt");//fetch settings header text element
-settingsHeaderText.style.fontFamily = font_style;//set text to select style
 
 /*
                         MAIN
                                                             */
             //get circle properties
 const progressRing = document.querySelector(".progress-ring");
-progressRing.setAttribute('stroke', accent_color);
 const parentSvg = document.querySelector(".timer-circle");
 const parentWidth = parentSvg.clientWidth;
 //console.log(parentWidth);
@@ -71,7 +66,7 @@ break_selectors.forEach((breaks) => {
 /*
                     EVENT LISTENERS
                                                             */
-        //event listener for starting and pausing
+        //Event listener for starting and pausing
 start_stop.addEventListener('click', () => {
     if(timerRunning){
         clearInterval(interval);
@@ -84,7 +79,7 @@ start_stop.addEventListener('click', () => {
     }
 });
 
-        //event listener for settings menu toggle
+        //Event listener for settings menu toggle
 const settingsButton = document.querySelector(".settings-btn");
 const closeButton = document.querySelector(".close-btn");
 const settingsMenu = document.querySelector('#settingsMenu');
@@ -96,7 +91,7 @@ closeButton.addEventListener('click', function () {
     settingsMenu.classList.toggle('hidden');
 });
 
-        //event listener for arrow button increamentors
+        //Event listener for arrow button increamentors
 const pomodoroArrowUp = document.querySelector(".pomo-up");
 const pomodoroArrowDown = document.querySelector(".pomo-down");
     const pomodoroInput = document.querySelector("#pomodoro-setter");
@@ -126,6 +121,87 @@ longbreakArrowDown.addEventListener('click', function(){
     longbreakInput.stepDown();
 });
 
+
+        //Eventlistener for apply button
+const applyButton = document.querySelector(".apply-button");
+const kumbhSansButton = document.querySelector("#kumbh-sans-btn");
+const robotoSlabButton = document.querySelector("#roboto-slab-btn");
+const spaceMonoButton = document.querySelector("#space-mono-btn");
+const durationsDiv = document.querySelector(".durations-div");
+const redButton = document.querySelector("#red-btn");
+const blueButton = document.querySelector("#blue-btn");
+const purpleButton = document.querySelector("#purple-btn");
+
+applyButton.addEventListener('click', function(){
+    //assign new values to pomodoro, shortbreak and longbreak
+    if(pomodoroInput.value > 50){
+        durations.pomodoro = 50;
+        pomodoroInput.value = 50;
+    } else if (pomodoroInput.value < 10){
+        durations.pomodoro = 10;
+        pomodoroInput.value = 10;
+    } else{
+        durations.pomodoro = pomodoroInput.value;
+    }
+
+    if (shortbreakInput.value > 10){
+        durations.shortbreak = 10;
+        shortbreakInput.value = 10;
+    } else if (shortbreakInput.value < 1){
+        durations.shortbreak = 1;
+        shortbreakInput.value = 1;
+    } else{
+        durations.shortbreak = shortbreakInput.value;
+    }
+
+    if(longbreakInput.value > 20){
+        durations.longbreak = 20;
+        longbreakInput.value = 20;
+    } else if (longbreakInput.value < 10){
+        durations.longbreak = 10;
+        longbreakInput.value = 10;
+    } else{
+        durations.longbreak = longbreakInput.value;
+    }
+
+    //font changers
+    if (kumbhSansButton.checked){
+        font_style = font1;
+        changeFont();
+    } else if (robotoSlabButton.checked){
+        font_style = font2;
+        changeFont();
+    } else if (spaceMonoButton.checked){
+        font_style = font3;
+        changeFont();
+        durationsDiv.style.fontSize = "0.8rem";
+    }
+    
+    //color changers
+    if (redButton.checked){
+        changeColor(red);
+    } else if (blueButton.checked){
+        changeColor(blue);
+    } else if (purpleButton.checked){
+        changeColor(purple);
+    }
+
+    //change displayed time to custom set time
+    console.log(break_selectors);
+    for (let i = 0; i < break_selectors.length; i++){
+        if (break_selectors[i].checked){
+            clearInterval(interval);
+            timerDuration = durations[break_selectors[i].value];
+            durationInSeconds = timerDuration * 60;
+            remainingTime = durationInSeconds;
+            timer_text.innerHTML = formatTime(remainingTime);
+            start_stop.innerHTML = 'START'; //change pause button to start
+        }
+    };
+    settingsMenu.classList.toggle('hidden');
+    window.alert("Changes Applied!");
+});
+
 /*
                     HELPER FUNCTIONS    
                                                             */
@@ -151,9 +227,25 @@ function countdown(){
         remainingTime = durationInSeconds; //reset the remaining time back to initial
     }
 };
-    //function for converting time in seconds to minutes:seconds display format
+        //function for converting time in seconds to minutes:seconds display format
 function formatTime(timeinseconds){
     const minutes = Math.floor(timeinseconds / 60); //divide the time in seconds by 60 and round to get the time in minutes
     const seconds = timeinseconds % 60; //calculate the time in seconds by getting the remainder of time that does not make up for a minute
     return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;//return minutes:seconds. Convert to string and pad with 0 if single digit
+};
+        //function  for changing font style
+function changeFont(){
+    durationsDiv.style.fontFamily = font_style;
+    timer_text.style.fontFamily = font_style;
+    start_stop.style.fontFamily = font_style;
+};
+        //function for changing accent color
+function changeColor(color){
+    for (let i = 0; i < break_selectors.length; i++){
+        if (break_selectors[i].checked){
+            accent_color = color;
+            document.documentElement.style.setProperty('--accent-color', accent_color);
+            console.log(accent_color);
+        }
+    }
 };
