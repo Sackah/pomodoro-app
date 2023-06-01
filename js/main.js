@@ -8,6 +8,7 @@ var deepBlue = '#1E213F';
 var font1 = "'Kumbh Sans', Poppins, Monserat, 'Open Sans', Roboto, sans-serif"
 var font2 = "'Roboto Slab', Lora, Merriweather, 'PT Serif', Arvo, 'Playfair Display', 'Noto serif'";
 var font3 = "'Space Mono', 'IBM Plex Mono', 'Fira Mono', 'Anonymous Pro', monospace";
+var alarmSound = document.querySelector("#alarmSound");
 
 let accent_color = red;
 let font_style = font1;
@@ -77,6 +78,11 @@ start_stop.addEventListener('click', () => {
         timerRunning = true;
         start_stop.innerHTML = 'PAUSE';// change start button to pause
     }
+});
+
+parentSvg.addEventListener('click', () => {
+    alarmSound.pause();
+    alarmSound.currentTime = 0;
 });
 
         //Event listener for settings menu toggle
@@ -175,6 +181,7 @@ applyButton.addEventListener('click', function(){
         font_style = font3;
         changeFont();
         durationsDiv.style.fontSize = "0.8rem";
+        timer_text.setAttribute("font-size", 80);
     }
     
     //color changers
@@ -224,6 +231,7 @@ function countdown(){
         clearInterval(interval);
         timerRunning = false;
         start_stop.innerHTML = 'RESTART';
+        alarmSound.play();
         remainingTime = durationInSeconds; //reset the remaining time back to initial
     }
 };

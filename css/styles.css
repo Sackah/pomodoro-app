@@ -623,7 +623,7 @@ label[for="longbreak-setter"] positions to relative and .time-setter display to 
         height: 385px;
     }
     .timer-text{
-        font-size: 68px;
+        font-size: 65px !important;
     }
     #settingsMenu{
         width: 90%;
