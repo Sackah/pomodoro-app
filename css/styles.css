@@ -535,7 +535,7 @@ label[for="longbreak-setter"] positions to relative and .time-setter display to 
         width: 30%;
         border-radius: 23px;
     } 
-    input[type="radio"] + span {
+    .break-mode-btn-span {
         font-size: 0.65rem !important;
     }
     .btn-txt{
@@ -544,7 +544,7 @@ label[for="longbreak-setter"] positions to relative and .time-setter display to 
 }
     /*Galaxy s8*/
 @media (max-width: 360px) and (min-width: 350px){
-    input[type="radio"] + span {
+    .break-mode-btn-span {
         font-size: 0.6rem !important;
     }
 }
@@ -582,13 +582,13 @@ label[for="longbreak-setter"] positions to relative and .time-setter display to 
         border-radius: 18px;
     } 
     .break-mode-btn-span {
-        font-size: 0.52rem;
+        font-size: 0.52rem !important;
     }
     .time-setter{
         padding-top: 0 !important;
     }
     .timer-text{
-        font-size: 50px !important;
+        font-size: 47px !important;
     }
     .btn-txt{
         font-size: 10px;
@@ -603,9 +603,6 @@ label[for="longbreak-setter"] positions to relative and .time-setter display to 
     }
     .apply{
         padding-top: 20% !important;
-    }
-    input[type="radio"] + span {
-        font-size: 0.42rem !important;
     }
 }
 /*mobile to foldable*/
@@ -623,7 +620,7 @@ label[for="longbreak-setter"] positions to relative and .time-setter display to 
         height: 385px;
     }
     .timer-text{
-        font-size: 65px !important;
+        font-size: 65px;
     }
     #settingsMenu{
         width: 90%;
