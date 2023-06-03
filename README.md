@@ -6,14 +6,14 @@ Pomodoro is a technique invented by Francesco Crillo who used a tomato timer to 
 ## controls
 Start button starts the timer, also acts as stop and restart button. 
 Time period toggles switch between time periods.
-Click anywhere on the clock circle to stop alarm if triggered
+Click anywhere on the clock circle to stop alarm if triggered.
 
-# additional info
+## additional info
  
 This is a project in requrement for [Amalitech](https://www.amalitech.org) national service training program.
 The ring was designed based on concepts from [Css Tricks](https://css-tricks.com/building-progress-ring-quickly/). As well as the project of [Mr. Chamu Mutezva](https://chamumutezva.github.io/pomodoro-app/)
 
-# view page
+## view page
 To view this website, use the link below
 - https://sackah.github.io/pomodoro-app/
 - alternatively you can view the website by opening the html page in your prefered browser
