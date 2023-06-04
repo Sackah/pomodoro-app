@@ -83,6 +83,7 @@ input[type="radio"] {
     height: 100%;
     width: 100%;
     padding: 15px;
+    padding-top: 17px;
     color: var(--custom-grey);
     font-weight: 700;
 }
