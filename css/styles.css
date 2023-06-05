@@ -101,6 +101,8 @@ input[type="radio"] {
 .break-mode-btn:checked + .break-mode-btn-span:hover {
     background-color: var(--accent-color);
     cursor: default;
+    animation: none;
+    transform: translateY(0px);
 }
 .settings-btn{
     border: none;
